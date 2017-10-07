@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="pl0" _name="PL/0" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.pl0</property>
+  </metadata>
+
+  <styles>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="number" _name="Number" map-to="def:decimal"/>
+  </styles>
+
+  <default-regex-options case-sensitive="false"/>
+
+  <definitions>
+    <context id="pl0">
+      <include>
+
+        <context id="number" style-ref="number">
+          <match>\b[0-9]+\b</match>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
+          <keyword>begin</keyword>
+          <keyword>call</keyword>
+          <keyword>const</keyword>
+          <keyword>do</keyword>
+          <keyword>end</keyword>
+          <keyword>if</keyword>
+          <keyword>odd</keyword>
+          <keyword>procedure</keyword>
+          <keyword>then</keyword>
+          <keyword>var</keyword>
+          <keyword>while</keyword>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

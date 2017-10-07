@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="fb2query" _name="foobar2000 Query" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.fb2query</property>
+  </metadata>
+
+  <styles>
+    <style id="constant" _name="Constants" map-to="def:constant"/>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="number" _name="Number" map-to="def:decimal"/>
+    <style id="string" _name="String" map-to="def:string"/>
+  </styles>
+
+  <definitions>
+    <context id="fb2query">
+      <include>
+
+        <context id="string" style-ref="string">
+          <match>"[^\n\r"]*"</match>
+        </context>
+
+        <context id="constant" style-ref="constant">
+          <match>%[^\n\r%]*%</match>
+        </context>
+
+        <context id="number" style-ref="number">
+          <match>\b[0-9]+\b</match>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
+          <keyword>AFTER</keyword>
+          <keyword>ALL</keyword>
+          <keyword>AND</keyword>
+          <keyword>ASCENDING</keyword>
+          <keyword>BEFORE</keyword>
+          <keyword>BY</keyword>
+          <keyword>DAYS</keyword>
+          <keyword>DAY</keyword>
+          <keyword>DESCENDING</keyword>
+          <keyword>DURING</keyword>
+          <keyword>EQUAL</keyword>
+          <keyword>GREATER</keyword>
+          <keyword>HAS</keyword>
+          <keyword>HOURS</keyword>
+          <keyword>HOUR</keyword>
+          <keyword>IS</keyword>
+          <keyword>LAST</keyword>
+          <keyword>LESS</keyword>
+          <keyword>MINUTES</keyword>
+          <keyword>MINUTE</keyword>
+          <keyword>MISSING</keyword>
+          <keyword>NOT</keyword>
+          <keyword>OR</keyword>
+          <keyword>PRESENT</keyword>
+          <keyword>SECONDS</keyword>
+          <keyword>SECOND</keyword>
+          <keyword>SINCE</keyword>
+          <keyword>SORT</keyword>
+          <keyword>WEEKS</keyword>
+          <keyword>WEEK</keyword>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

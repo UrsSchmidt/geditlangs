@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="fb2" _name="foobar2000 Title Formatting" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.fb2</property>
+    <property name="line-comment-start">//</property>
+  </metadata>
+
+  <styles>
+    <style id="builtin" _name="Builtin Function" map-to="def:builtin"/>
+    <style id="comment" _name="Comment" map-to="def:comment"/>
+    <style id="constant" _name="Constants" map-to="def:constant"/>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="string" _name="String" map-to="def:string"/>
+  </styles>
+
+  <definitions>
+    <context id="fb2">
+      <include>
+
+        <context id="builtin" style-ref="builtin">
+          <match>\$[_a-z]+</match>
+        </context>
+
+        <context id="constant" style-ref="constant">
+          <match>%[^\n\r%]*%</match>
+        </context>
+
+        <context id="string" style-ref="string">
+          <match>'[^\n\r']*'</match>
+        </context>
+
+        <context id="comment" style-ref="comment" end-at-line-end="true">
+          <start>//</start>
+          <include>
+            <context ref="def:in-line-comment"/>
+          </include>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
+          <keyword>ENC_DELAY</keyword>
+          <keyword>ENC_PADDING</keyword>
+          <keyword>FLAGS</keyword>
+          <keyword>MP3_ACCURATE_LENGTH</keyword>
+          <keyword>MP3_STEREO_MODE</keyword>
+          <keyword>VERSION</keyword>
+          <keyword>__bitspersample</keyword>
+          <keyword>bitrate</keyword>
+          <keyword>channel_mode</keyword>
+          <keyword>channels</keyword>
+          <keyword>codec_profile</keyword>
+          <keyword>codec</keyword>
+          <keyword>cue_embedded</keyword>
+          <keyword>encoding</keyword>
+          <keyword>md5</keyword>
+          <keyword>samplerate</keyword>
+          <keyword>tagtype</keyword>
+          <keyword>tool</keyword>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

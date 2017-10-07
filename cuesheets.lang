@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="cuesheets" _name="Cue Sheets" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.cue</property>
+    <property name="line-comment-start">//</property>
+  </metadata>
+
+  <styles>
+    <style id="comment" _name="Comment" map-to="def:comment"/>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="string" _name="String" map-to="def:string"/>
+  </styles>
+
+  <definitions>
+    <context id="cuesheets">
+      <include>
+
+        <context id="string" style-ref="string">
+          <match>"[^\n\r"]*"</match>
+        </context>
+
+        <context id="comment" style-ref="comment" end-at-line-end="true">
+          <start>//</start>
+          <include>
+            <context ref="def:in-line-comment"/>
+          </include>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
+          <keyword>AUDIO</keyword>
+          <keyword>CATALOG</keyword>
+          <keyword>COMMENT</keyword>
+          <keyword>DATE</keyword>
+          <keyword>DISCID</keyword>
+          <keyword>FILE</keyword>
+          <keyword>GENRE</keyword>
+          <keyword>INDEX</keyword>
+          <keyword>ISRC</keyword>
+          <keyword>PERFORMER</keyword>
+          <keyword>REM</keyword>
+          <keyword>REPLAYGAIN_ALBUM_GAIN</keyword>
+          <keyword>REPLAYGAIN_ALBUM_PEAK</keyword>
+          <keyword>REPLAYGAIN_TRACK_GAIN</keyword>
+          <keyword>REPLAYGAIN_TRACK_PEAK</keyword>
+          <keyword>TITLE</keyword>
+          <keyword>TRACK</keyword>
+          <keyword>WAVE</keyword>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>
