@@ -6,9 +6,10 @@
   </metadata>
 
   <styles>
-    <style id="comment" _name="Comment" map-to="def:comment"/>
     <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="number" _name="Number" map-to="def:number"/>
     <style id="string" _name="String" map-to="def:string"/>
+    <style id="timestamp" _name="Timestamp" map-to="def:number"/>
   </styles>
 
   <definitions>
@@ -19,32 +20,55 @@
           <match>"[^\n\r"]*"</match>
         </context>
 
-        <context id="comment" style-ref="comment" end-at-line-end="true">
-          <start>//</start>
-          <include>
-            <context ref="def:in-line-comment"/>
-          </include>
+        <context id="timestamp" style-ref="timestamp">
+          <match>\b[0-9][0-9]:[0-9][0-9]:[0-9][0-9]\b</match>
         </context>
 
-        <context id="keyword" style-ref="keyword">
+        <context id="number" style-ref="number">
+          <match>\b[0-9]+\b</match>
+        </context>
+
+        <context id="keyword-official" style-ref="keyword">
+          <keyword>4CH</keyword>
+          <keyword>AIFF</keyword>
           <keyword>AUDIO</keyword>
+          <keyword>BINARY</keyword>
           <keyword>CATALOG</keyword>
+          <keyword>CDG</keyword>
+          <keyword>CDI/2336</keyword>
+          <keyword>CDI/2352</keyword>
+          <keyword>CDTEXTFILE</keyword>
+          <keyword>DCP</keyword>
+          <keyword>FILE</keyword>
+          <keyword>FLAGS</keyword>
+          <keyword>INDEX</keyword>
+          <keyword>ISRC</keyword>
+          <keyword>MODE1/2048</keyword>
+          <keyword>MODE1/2352</keyword>
+          <keyword>MODE2/2336</keyword>
+          <keyword>MODE2/2352</keyword>
+          <keyword>MOTOROLA</keyword>
+          <keyword>MP3</keyword>
+          <keyword>PERFORMER</keyword>
+          <keyword>POSTGAP</keyword>
+          <keyword>PREGAP</keyword>
+          <keyword>PRE</keyword>
+          <keyword>REM</keyword>
+          <keyword>SONGWRITER</keyword>
+          <keyword>TITLE</keyword>
+          <keyword>TRACK</keyword>
+          <keyword>WAVE</keyword>
+        </context>
+
+        <context id="keyword-thirdparty" style-ref="keyword">
           <keyword>COMMENT</keyword>
           <keyword>DATE</keyword>
           <keyword>DISCID</keyword>
-          <keyword>FILE</keyword>
           <keyword>GENRE</keyword>
-          <keyword>INDEX</keyword>
-          <keyword>ISRC</keyword>
-          <keyword>PERFORMER</keyword>
-          <keyword>REM</keyword>
           <keyword>REPLAYGAIN_ALBUM_GAIN</keyword>
           <keyword>REPLAYGAIN_ALBUM_PEAK</keyword>
           <keyword>REPLAYGAIN_TRACK_GAIN</keyword>
           <keyword>REPLAYGAIN_TRACK_PEAK</keyword>
-          <keyword>TITLE</keyword>
-          <keyword>TRACK</keyword>
-          <keyword>WAVE</keyword>
         </context>
 
       </include>
