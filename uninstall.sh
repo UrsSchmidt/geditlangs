@@ -1,21 +1,23 @@
 #!/bin/bash
 
-if [ -f '/usr/share/gtksourceview-3.0/language-specs/antlr.lang' ]; then
-    rm '/usr/share/gtksourceview-3.0/language-specs/antlr.lang'
+path="$path'
+
+if [ -f "$path/antlr.lang" ]; then
+    rm "$path/antlr.lang"
 fi
 
-if [ -f '/usr/share/gtksourceview-3.0/language-specs/cuesheets.lang' ]; then
-    rm '/usr/share/gtksourceview-3.0/language-specs/cuesheets.lang'
+if [ -f "$path/cuesheets.lang" ]; then
+    rm "$path/cuesheets.lang"
 fi
 
-if [ -f '/usr/share/gtksourceview-3.0/language-specs/fb2.lang' ]; then
-    rm '/usr/share/gtksourceview-3.0/language-specs/fb2.lang'
+if [ -f "$path/fb2.lang" ]; then
+    rm "$path/fb2.lang"
 fi
 
-if [ -f '/usr/share/gtksourceview-3.0/language-specs/fb2query.lang' ]; then
-    rm '/usr/share/gtksourceview-3.0/language-specs/fb2query.lang'
+if [ -f "$path/fb2query.lang" ]; then
+    rm "$path/fb2query.lang"
 fi
 
-if [ -f '/usr/share/gtksourceview-3.0/language-specs/pl0.lang' ]; then
-    rm '/usr/share/gtksourceview-3.0/language-specs/pl0.lang'
+if [ -f "$path/pl0.lang" ]; then
+    rm "$path/pl0.lang"
 fi

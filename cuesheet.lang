@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="cuesheets" _name="Cue Sheets" version="2.0" _section="Source">
+<language id="cuesheet" _name="Cue Sheet" version="2.0" _section="Source">
   <metadata>
     <property name="globs">*.cue</property>
     <property name="line-comment-start">//</property>
@@ -12,7 +12,7 @@
   </styles>
 
   <definitions>
-    <context id="cuesheets">
+    <context id="cuesheet">
       <include>
 
         <context id="string" style-ref="string">

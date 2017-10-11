@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if [ -d '/usr/share/gtksourceview-3.0/language-specs/' ]; then
-    cp 'antlr.lang' '/usr/share/gtksourceview-3.0/language-specs/'
-    cp 'cuesheets.lang' '/usr/share/gtksourceview-3.0/language-specs/'
-    cp 'fb2.lang' '/usr/share/gtksourceview-3.0/language-specs/'
-    cp 'fb2query.lang' '/usr/share/gtksourceview-3.0/language-specs/'
-    cp 'pl0.lang' '/usr/share/gtksourceview-3.0/language-specs/'
+path='/usr/share/gtksourceview-3.0/language-specs/'
+
+if [ -d "$path" ]; then
+    cp 'antlr.lang' "$path"
+    cp 'cuesheets.lang' "$path"
+    cp 'fb2.lang' "$path"
+    cp 'fb2query.lang' "$path"
+    cp 'pl0.lang' "$path"
 fi
