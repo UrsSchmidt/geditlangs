@@ -1,6 +1,10 @@
 #!/bin/bash
 
-path="$path'
+path='/usr/share/gtksourceview-3.0/language-specs'
+
+if [ ! -d "$path" ]; then
+    echo "Error: $path is not a directory"
+fi
 
 if [ -f "$path/antlr.lang" ]; then
     rm "$path/antlr.lang"
