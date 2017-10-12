@@ -2,7 +2,6 @@
 <language id="cuesheet" _name="Cue Sheet" version="2.0" _section="Source">
   <metadata>
     <property name="globs">*.cue</property>
-    <property name="line-comment-start">//</property>
   </metadata>
 
   <styles>

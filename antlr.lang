@@ -8,6 +8,7 @@
   </metadata>
 
   <styles>
+    <style id="builtin" _name="Builtin Function" map-to="def:builtin"/>
     <style id="comment" _name="Comment" map-to="def:comment"/>
     <style id="keyword" _name="Keyword" map-to="def:keyword"/>
     <style id="regex" _name="Regular Expression" map-to="def:string"/>
@@ -41,12 +42,19 @@
           <match>\[([^\n\r\\\]]|(\\[^\n\r]))+\]</match>
         </context>
 
-        <context id="keyword" style-ref="keyword">
+        <context id="builtin" style-ref="builtin">
           <keyword>EOF</keyword>
           <keyword>HIDDEN</keyword>
+          <keyword>channel</keyword>
+          <keyword>more</keyword>
+          <keyword>pop</keyword>
+          <keyword>push</keyword>
+          <keyword>skip</keyword>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
           <keyword>catch</keyword>
           <keyword>channels</keyword>
-          <keyword>channel</keyword>
           <keyword>finally</keyword>
           <keyword>fragment</keyword>
           <keyword>grammar</keyword>
@@ -60,7 +68,6 @@
           <keyword>protected</keyword>
           <keyword>public</keyword>
           <keyword>returns</keyword>
-          <keyword>skip</keyword>
           <keyword>throws</keyword>
           <keyword>tokens</keyword>
         </context>
