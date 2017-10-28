@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="ebnf" _name="EBNF" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.ebnf</property>
+    <property name="block-comment-start">(*</property>
+    <property name="block-comment-end">*)</property>
+  </metadata>
+
+  <styles>
+    <style id="comment" _name="Comment" map-to="def:comment"/>
+    <style id="string" _name="String" map-to="def:string"/>
+    <style id="special" _name="Special" map-to="def:preprocessor"/>
+  </styles>
+
+  <definitions>
+    <context id="ebnf">
+      <include>
+
+        <context id="string1" style-ref="string">
+          <match>"[^\n\r"]+"</match>
+        </context>
+
+        <context id="string2" style-ref="string">
+          <match>'[^\n\r']+'</match>
+        </context>
+
+        <context id="comment" style-ref="comment">
+          <start>\(\*</start>
+          <end>\*\)</end>
+          <include>
+            <context ref="def:in-comment"/>
+          </include>
+        </context>
+
+        <context id="special" style-ref="special">
+          <match>\?[^\n\r?]+\?</match>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

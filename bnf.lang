@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="bnf" _name="BNF" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.bnf</property>
+  </metadata>
+
+  <styles>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="string" _name="String" map-to="def:string"/>
+  </styles>
+
+  <definitions>
+    <context id="bnf">
+      <include>
+
+        <context id="string1" style-ref="string">
+          <match>"[^\n\r"]*"</match>
+        </context>
+
+        <context id="string2" style-ref="string">
+          <match>'[^\n\r']*'</match>
+        </context>
+
+        <context id="nonterminal" style-ref="keyword">
+          <match>&lt;[^\n\r&gt;]*&gt;</match>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>
