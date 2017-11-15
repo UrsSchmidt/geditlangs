@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="rgbasm" _name="RGBASM" version="2.0" _section="Source">
+  <metadata>
+    <property name="globs">*.asm</property>
+    <property name="line-comment-start">;</property>
+  </metadata>
+
+  <styles>
+    <style id="builtin" _name="Builtin Function" map-to="def:builtin"/>
+    <style id="comment" _name="Comment" map-to="def:comment"/>
+    <style id="number" _name="Number" map-to="def:number"/>
+    <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+    <style id="keyword2" _name="Secondary Keyword" map-to="def:type"/>
+    <style id="string" _name="String" map-to="def:string"/>
+  </styles>
+
+  <default-regex-options case-sensitive="false"/>
+
+  <definitions>
+    <context id="rgbasm">
+      <include>
+
+        <context id="string" style-ref="string">
+          <match>"([^\n\r"\\]|(\\[^\n\r]))*"</match>
+        </context>
+
+        <context id="number-hex" style-ref="number">
+          <match>\$[0-9A-F]+\b</match>
+        </context>
+
+        <context id="number-bin" style-ref="number">
+          <match>%[0-1]+</match>
+        </context>
+
+        <context id="number-oct" style-ref="number">
+          <match>&amp;[0-7]+</match>
+        </context>
+
+        <context id="number-dec" style-ref="number">
+          <match>\b[0-9]+(\.[0-9]+)?\b</match>
+        </context>
+
+        <context id="comment" style-ref="comment" end-at-line-end="true">
+          <start>;</start>
+          <include>
+            <context ref="def:in-line-comment"/>
+          </include>
+        </context>
+
+        <context id="keyword" style-ref="keyword">
+          <keyword>DB</keyword>
+          <keyword>DS</keyword>
+          <keyword>DW</keyword>
+          <keyword>ELIF</keyword>
+          <keyword>ELSE</keyword>
+          <keyword>ENDC</keyword>
+          <keyword>ENDM</keyword>
+          <keyword>ENDR</keyword>
+          <keyword>ENDU</keyword>
+          <keyword>EQU</keyword>
+          <keyword>EQUS</keyword>
+          <keyword>EXPORT</keyword>
+          <keyword>FAIL</keyword>
+          <keyword>GLOBAL</keyword>
+          <keyword>HRAM</keyword>
+          <keyword>IF</keyword>
+          <keyword>INCBIN</keyword>
+          <keyword>INCLUDE</keyword>
+          <keyword>MACRO</keyword>
+          <keyword>NEXTU</keyword>
+          <keyword>OAM</keyword>
+          <keyword>OPT</keyword>
+          <keyword>POPO</keyword>
+          <keyword>POPS</keyword>
+          <keyword>PRINTF</keyword>
+          <keyword>PRINTT</keyword>
+          <keyword>PRINTV</keyword>
+          <keyword>PURGE</keyword>
+          <keyword>PUSHO</keyword>
+          <keyword>PUSHS</keyword>
+          <keyword>RB</keyword>
+          <keyword>REPT</keyword>
+          <keyword>RL</keyword>
+          <keyword>ROM0</keyword>
+          <keyword>ROMX</keyword>
+          <keyword>RSRESET</keyword>
+          <keyword>RSSET</keyword>
+          <keyword>RW</keyword>
+          <keyword>SECTION</keyword>
+          <keyword>SET</keyword>
+          <keyword>SHIFT</keyword>
+          <keyword>SRAM</keyword>
+          <keyword>UNION</keyword>
+          <keyword>VRAM</keyword>
+          <keyword>WARN</keyword>
+          <keyword>WRAM0</keyword>
+          <keyword>WRAMX</keyword>
+        </context>
+
+        <context id="builtin" style-ref="builtin">
+          <keyword>ACOS</keyword>
+          <keyword>ASIN</keyword>
+          <keyword>ATAN</keyword>
+          <keyword>ATAN2</keyword>
+          <keyword>BANK</keyword>
+          <keyword>COS</keyword>
+          <keyword>DEF</keyword>
+          <keyword>DIV</keyword>
+          <keyword>HIGH</keyword>
+          <keyword>LOW</keyword>
+          <keyword>MUL</keyword>
+          <keyword>SIN</keyword>
+          <keyword>STRCAT</keyword>
+          <keyword>STRCMP</keyword>
+          <keyword>STRIN</keyword>
+          <keyword>STRLEN</keyword>
+          <keyword>STRLWR</keyword>
+          <keyword>STRSUB</keyword>
+          <keyword>STRUPR</keyword>
+          <keyword>TAN</keyword>
+        </context>
+
+        <context id="instructions" style-ref="keyword">
+          <keyword>ADC</keyword>
+          <keyword>ADD</keyword>
+          <keyword>AND</keyword>
+          <keyword>BIT</keyword>
+          <keyword>CALL</keyword>
+          <keyword>CCF</keyword>
+          <keyword>CP</keyword>
+          <keyword>CPL</keyword>
+          <keyword>DAA</keyword>
+          <keyword>DEC</keyword>
+          <keyword>DI</keyword>
+          <keyword>EI</keyword>
+          <keyword>HALT</keyword>
+          <keyword>INC</keyword>
+          <keyword>JP</keyword>
+          <keyword>JR</keyword>
+          <keyword>LD</keyword>
+          <keyword>NOP</keyword>
+          <keyword>OR</keyword>
+          <keyword>POP</keyword>
+          <keyword>PUSH</keyword>
+          <keyword>RES</keyword>
+          <keyword>RET</keyword>
+          <keyword>RETI</keyword>
+          <keyword>RL</keyword>
+          <keyword>RLA</keyword>
+          <keyword>RLC</keyword>
+          <keyword>RLCA</keyword>
+          <keyword>RR</keyword>
+          <keyword>RRA</keyword>
+          <keyword>RRC</keyword>
+          <keyword>RRCA</keyword>
+          <keyword>RST</keyword>
+          <keyword>SBC</keyword>
+          <keyword>SCF</keyword>
+          <keyword>SET</keyword>
+          <keyword>SLA</keyword>
+          <keyword>SRA</keyword>
+          <keyword>SRL</keyword>
+          <keyword>STOP</keyword>
+          <keyword>SUB</keyword>
+          <keyword>SWAP</keyword>
+          <keyword>XOR</keyword>
+        </context>
+
+        <context id="registers-conditions" style-ref="keyword2">
+          <keyword>A</keyword>
+          <keyword>B</keyword>
+          <keyword>BC</keyword>
+          <keyword>C</keyword>
+          <keyword>D</keyword>
+          <keyword>DE</keyword>
+          <keyword>E</keyword>
+          <keyword>H</keyword>
+          <keyword>HL</keyword>
+          <keyword>L</keyword>
+          <keyword>NC</keyword>
+          <keyword>NZ</keyword>
+          <keyword>Z</keyword>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

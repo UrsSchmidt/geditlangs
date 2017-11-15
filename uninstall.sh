@@ -33,3 +33,7 @@ fi
 if [ -f "$path/pl0.lang" ]; then
     rm "$path/pl0.lang"
 fi
+
+if [ -f "$path/rgbasm.lang" ]; then
+    rm "$path/rgbasm.lang"
+fi
