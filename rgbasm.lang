@@ -168,6 +168,7 @@
 
         <context id="registers-conditions" style-ref="keyword2">
           <keyword>A</keyword>
+          <keyword>AF</keyword>
           <keyword>B</keyword>
           <keyword>BC</keyword>
           <keyword>C</keyword>
@@ -179,6 +180,7 @@
           <keyword>L</keyword>
           <keyword>NC</keyword>
           <keyword>NZ</keyword>
+          <keyword>SP</keyword>
           <keyword>Z</keyword>
         </context>
 
