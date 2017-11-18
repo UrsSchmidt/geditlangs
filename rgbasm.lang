@@ -8,9 +8,10 @@
   <styles>
     <style id="builtin" _name="Builtin Function" map-to="def:builtin"/>
     <style id="comment" _name="Comment" map-to="def:comment"/>
-    <style id="number" _name="Number" map-to="def:number"/>
+    <style id="instruction" _name="Instruction" map-to="def:type"/>
     <style id="keyword" _name="Keyword" map-to="def:keyword"/>
-    <style id="keyword2" _name="Secondary Keyword" map-to="def:type"/>
+    <style id="number" _name="Number" map-to="def:number"/>
+    <style id="special" _name="Special" map-to="def:special-constant"/>
     <style id="string" _name="String" map-to="def:string"/>
   </styles>
 
@@ -120,7 +121,7 @@
           <keyword>TAN</keyword>
         </context>
 
-        <context id="instructions" style-ref="keyword">
+        <context id="instruction" style-ref="instruction">
           <keyword>ADC</keyword>
           <keyword>ADD</keyword>
           <keyword>AND</keyword>
@@ -166,7 +167,7 @@
           <keyword>XOR</keyword>
         </context>
 
-        <context id="registers-conditions" style-ref="keyword2">
+        <context id="special" style-ref="special">
           <keyword>A</keyword>
           <keyword>AF</keyword>
           <keyword>B</keyword>
