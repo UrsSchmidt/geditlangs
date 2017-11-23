@@ -139,6 +139,7 @@
           <keyword>JP</keyword>
           <keyword>JR</keyword>
           <keyword>LD</keyword>
+          <keyword>LDH</keyword>
           <keyword>NOP</keyword>
           <keyword>OR</keyword>
           <keyword>POP</keyword>
@@ -178,6 +179,7 @@
           <keyword>E</keyword>
           <keyword>H</keyword>
           <keyword>HL</keyword>
+          <keyword>HLI</keyword>
           <keyword>L</keyword>
           <keyword>NC</keyword>
           <keyword>NZ</keyword>
