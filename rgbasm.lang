@@ -88,7 +88,7 @@
           <keyword>RSSET</keyword>
           <keyword>RW</keyword>
           <keyword>SECTION</keyword>
-          <keyword>SET</keyword>
+     <!-- <keyword>SET</keyword> -->
           <keyword>SHIFT</keyword>
           <keyword>SRAM</keyword>
           <keyword>UNION</keyword>
