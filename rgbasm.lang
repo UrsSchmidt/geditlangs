@@ -9,9 +9,10 @@
     <style id="builtin" _name="Builtin Function" map-to="def:builtin"/>
     <style id="comment" _name="Comment" map-to="def:comment"/>
     <style id="instruction" _name="Instruction" map-to="def:type"/>
+    <style id="label" _name="Label" map-to="def:special-constant"/>
     <style id="keyword" _name="Keyword" map-to="def:keyword"/>
     <style id="number" _name="Number" map-to="def:number"/>
-    <style id="special" _name="Special" map-to="def:special-constant"/>
+    <style id="register" _name="Register or Flag" map-to="def:special-constant"/>
     <style id="string" _name="String" map-to="def:string"/>
   </styles>
 
@@ -35,6 +36,10 @@
 
         <context id="number-oct" style-ref="number">
           <match>&amp;[0-7]+</match>
+        </context>
+
+        <context id="label" style-ref="label">
+          <match>\.[0-9A-Z_a-z]+</match>
         </context>
 
         <context id="number-dec" style-ref="number">
@@ -81,7 +86,7 @@
           <keyword>PUSHS</keyword>
           <keyword>RB</keyword>
           <keyword>REPT</keyword>
-          <keyword>RL</keyword>
+     <!-- <keyword>RL</keyword> -->
           <keyword>ROM0</keyword>
           <keyword>ROMX</keyword>
           <keyword>RSRESET</keyword>
@@ -139,7 +144,10 @@
           <keyword>JP</keyword>
           <keyword>JR</keyword>
           <keyword>LD</keyword>
+          <keyword>LDD</keyword>
+          <keyword>LDI</keyword>
           <keyword>LDH</keyword>
+          <keyword>LDHL</keyword>
           <keyword>NOP</keyword>
           <keyword>OR</keyword>
           <keyword>POP</keyword>
@@ -168,7 +176,7 @@
           <keyword>XOR</keyword>
         </context>
 
-        <context id="special" style-ref="special">
+        <context id="register-or-flag" style-ref="register">
           <keyword>A</keyword>
           <keyword>AF</keyword>
           <keyword>B</keyword>
