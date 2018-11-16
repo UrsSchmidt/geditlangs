@@ -1,16 +1,12 @@
 #!/bin/bash
 
 path='/usr/share/gtksourceview-3.0/language-specs/'
+langs=('antlr' 'bnf' 'cuesheet' 'ebnf' 'fb2' 'fb2query' 'jasmin' 'jimple' 'pl0' 'rgbasm')
 
 if [ -d "$path" ]; then
-    cp 'antlr.lang' "$path"
-    cp 'bnf.lang' "$path"
-    cp 'cuesheet.lang' "$path"
-    cp 'ebnf.lang' "$path"
-    cp 'fb2.lang' "$path"
-    cp 'fb2query.lang' "$path"
-    cp 'pl0.lang' "$path"
-    cp 'rgbasm.lang' "$path"
+    for lang in "${langs[@]}"; do
+        cp "$lang.lang" "$path"
+    done
 else
     echo "Error: $path is not a directory"
 fi
