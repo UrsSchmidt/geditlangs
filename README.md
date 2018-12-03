@@ -1,4 +1,4 @@
-# gedit .lang files
+# geditlangs
 
 Additional language definitions for gedit.
 
