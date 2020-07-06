@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path='/usr/share/gtksourceview-3.0/language-specs'
+path='/usr/share/gtksourceview-4/language-specs'
 
 if [ -d "$path" ]; then
     for f in 'src/'*.lang; do
